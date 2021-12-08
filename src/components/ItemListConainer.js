@@ -38,7 +38,7 @@ const ItemListContainer = () => {
     } else {
 
         return <>
-            <ItemList lista={items}/>
+            <ItemList listaDeItems={items}/>
             <p>Este es el List Container</p>
             <Counter stock={stock} initial={1} />
         </>

@@ -1,17 +1,13 @@
 import Item from "./Item";
 
 
-const ItemList = (items) => {
-    
-    const [ uno, dos ,tres] = items.lista
-
-    console.log('ttsadas', uno, items.lista)
+const ItemList = ({listaDeItems}) => {
     
     return <>
         <div class='row container'>
-        <Item itm = {uno}/>
-        <Item itm = {dos}/>
-        <Item itm = {tres}/>
+        {listaDeItems.map((e)=>{
+            return <Item itm = {e}/>
+        })}
         </div>
     </>
 }

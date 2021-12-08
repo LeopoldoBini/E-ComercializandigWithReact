@@ -1,4 +1,4 @@
-import Counter from "./Counter";
+
 const Item = ({itm}) => {
 
     const {title,description,image,price} = itm
