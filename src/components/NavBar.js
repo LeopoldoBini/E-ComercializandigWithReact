@@ -5,11 +5,11 @@ const NavBar = () => {
         <nav>
 
             <div class="nav-wrapper">
-            <h1 href="#" class="brand-logo center">E-comercializandig</h1>
+            <h1 style={{margin : "auto"}} class="brand-logo center valign-wrapper">E-comercializandig</h1>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li> <p>Ir Aca</p> </li>
-                    <li> <p>Alla</p> </li>
-                    <li> <p>o Más Alla</p> </li>
+                    <li> <i>Ir Aca</i> </li>
+                    <li> <i>Alla</i> </li>
+                    <li> <i>o Más Alla</i> </li>
                 </ul>
             <CartWidget></CartWidget>
             </div>

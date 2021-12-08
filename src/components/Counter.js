@@ -1,10 +1,10 @@
 import { useState } from "react"
 
 
-const Counter = ({ stock, initial }) => {
+const Counter = ({ stock }) => {
 
 
-    const [contador, setContador] = useState(initial)
+    const [contador, setContador] = useState(1)
 
     console.log(contador)
 
@@ -27,9 +27,9 @@ const Counter = ({ stock, initial }) => {
         return <>
             <p>Unidades a comprar: {contador}</p>
             <div id="botonera">
-                <button onClick={restar}>➖</button>
-                <button onClick={addOn}>Agregar al carretex</button>
-                <button onClick={sumar}>➕</button>
+                <button class="btn-floating btn-small waves-effect waves-light red" onClick={restar}>➖</button>
+                <button class="waves-effect waves-light btn-small pink lighten-2 " onClick={addOn}>Agregar al carretex</button>
+                <button class="btn-floating btn-small waves-effect waves-light red" onClick={sumar}>➕</button>
             </div>
         </>
     }else{
