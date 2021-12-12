@@ -1,6 +1,6 @@
 const Footer = () => {
     return <>
-        <footer class="page-footer" style={{position: "absolute",bottom:0, width:"100vw"}}>
+        <footer class="page-footer">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
