@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 
-const Item = ({ itm }) => {
+const Item = ( {itm, i} ) => {
 
     const { title, description, image, price, category } = itm
-
-    return <>
+    const pathToDetail = "item/"+i
+    return (
 
 
         <div class="col s3">
             <div class="card large">
                 <div class="card-image">
-                    <img src={image} style={{ height: "300px", }}></img>
-                    <span class="card-title" style={{text_shadow: "1px 1px 2px black"}}>{title}</span>
+                    <img src={image} style={{ height: "300px", }} alt={title}></img>
+                    <span class="card-title" style={{ text_shadow: "1px 1px 2px black" }}>{title}</span>
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{category}<i class="material-icons right">more_vert</i></span>
@@ -21,16 +22,16 @@ const Item = ({ itm }) => {
                     <p>{description}</p>
                 </div>
                 <div class="card-action center-align">
-                    <button class="btn ">
-                        Ver detalle
-                    </button>
+                    <Link to= {pathToDetail}>
+                        <button class="btn ">Ver detalle {i}</button>
+                    </Link>
 
                 </div>
             </div>
         </div>
 
 
-    </>
+    )
 
 }
 

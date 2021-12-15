@@ -1,6 +1,12 @@
-const ItemDetailCointainer = () => {
+import { useState } from "react";
+import ItemDetail from "./ItemDetail";
 
-    //no se bien que hacer aca... hehehehehohohoh
+const ItemDetailCointainer = (itemSeleccionado) => {
+
+    const [itemDetail, setItemDetail] = useState(null)
+
+
+    return <ItemDetail itm={itemSeleccionado}/>
 }
 
 export default ItemDetailCointainer;

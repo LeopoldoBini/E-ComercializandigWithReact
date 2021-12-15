@@ -1,8 +1,9 @@
-const ItemDetail = () => {
+const ItemDetail = ({itm}) => {
+    
     
     return (
         <div>
-            
+            hello
         </div>
     )
 }
