@@ -10,7 +10,7 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const { tipo } = useParams()
     console.log(useParams())
-    
+
     const getItems = () => {
         if (!tipo) {
             fetch('https://fakestoreapi.com/products')
@@ -33,17 +33,17 @@ const ItemListContainer = () => {
 
         getItems()
     }, [tipo])
-    
+
 
     if (!items) {
         return <CositoCargando />
 
     } else {
 
-        return <>
-            <ItemList listaDeItems={items} />
-            <p>Este es el List Container</p>
-        </>
+        return <ItemList listaDeItems={items} />
+
+
+
     }
 }
 

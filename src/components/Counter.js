@@ -1,15 +1,14 @@
 import { useState } from "react"
 
 
-const Counter = ({ stock }) => {
+const Counter = ({ stock , agregarAlCarro , idProdAAgregar}) => {
 
 
     const [contador, setContador] = useState(1)
 
-    console.log(contador)
 
-
-    const addOn = () => {
+    const onAdd = () => {
+        agregarAlCarro(idProdAAgregar , contador)
         console.log(`agregando ${contador} al carrito`)
         setContador(0)
     }
@@ -28,7 +27,7 @@ const Counter = ({ stock }) => {
             <p>Unidades a comprar: {contador}</p>
             <div id="botonera">
                 <button class="btn-floating btn-small waves-effect waves-light red" onClick={restar}>➖</button>
-                <button class="waves-effect waves-light btn-small pink lighten-2 " onClick={addOn}>Agregar al carretex</button>
+                <button class="waves-effect waves-light btn-small pink lighten-2 pulse" onClick={onAdd}>Agregar al Carrito</button>
                 <button class="btn-floating btn-small waves-effect waves-light red" onClick={sumar}>➕</button>
             </div>
         </>
