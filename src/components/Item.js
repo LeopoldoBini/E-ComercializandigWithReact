@@ -4,7 +4,7 @@ const Item = ( {itm, i} ) => {
 
     const { id, title, description, image, price, category } = itm
 
-    const pathToDetail = "item/"+id 
+    const pathToDetail = "/item/"+id 
     return (
 
 

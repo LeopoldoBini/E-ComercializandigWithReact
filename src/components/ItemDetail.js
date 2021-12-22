@@ -1,34 +1,23 @@
-import { useState } from "react"
-import Counter from "./Counter.js"
-import { Link } from "react-router-dom"
+
+import { useContext } from "react";
+import {contextoCarro} from "./CartContext.js"
+import Counter from "./Counter.js";
+import { Link } from "react-router-dom";
+
+
 const ItemDetail = ({ itm }) => {
 
     const { id, title, price, category, description, image, rating } = itm
     const stock = 5
     const rate = 4.5
     const votantes = 200
-    const [carrito, setCarrito] = useState([])
-
-    const agregarAlCarro = (itemId, itemCantidad) => {
-
-        const productosYaSeleccionados = carrito.reduce((a, b) => [...a, b.id], [])
-
-
-        if (productosYaSeleccionados.includes(itemId)) {
-            const copiaCarrito = [...carrito]
-            copiaCarrito.find(producto => producto.id = itemId).cantidad = itemCantidad + copiaCarrito.find(producto => producto.id = itemId).cantidad
-            setCarrito(copiaCarrito)
-            
-
-        } else {
-            const itmAlCarro = { id: itemId, cantidad: itemCantidad }
-            setCarrito([...carrito, itmAlCarro])
-            
-        }
-
-    }
+   
+    const valueContextoCarrito = useContext(contextoCarro)
     
+    const {carrito , agregarAlCarro} = valueContextoCarrito
+        console.log(carrito)
 
+        
     return (
         <div class="container-large">
 

@@ -9,7 +9,6 @@ const ItemListContainer = () => {
 
     const [items, setItems] = useState([])
     const { tipo } = useParams()
-    console.log(useParams())
 
     const getItems = () => {
         if (!tipo) {

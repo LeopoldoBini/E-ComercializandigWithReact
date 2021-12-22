@@ -14,6 +14,7 @@ const ItemDetailCointainer = () => {
             .then(res => res.json())
             .then(json => setItemDetail(json))
             .catch(err => console.log("algo malo pasó:", err))
+            console.log('pidiendo item ', id)
     }
 
     useEffect(() => {

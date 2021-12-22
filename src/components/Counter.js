@@ -10,7 +10,7 @@ const Counter = ({ stock , agregarAlCarro , idProdAAgregar}) => {
     const onAdd = () => {
         agregarAlCarro(idProdAAgregar , contador)
         console.log(`agregando ${contador} al carrito`)
-        setContador(0)
+        setContador(1)
     }
 
     const sumar = () => {
