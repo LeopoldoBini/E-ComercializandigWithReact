@@ -1,20 +1,20 @@
 
 import { useContext } from "react";
-import {contextoCarro} from "./CartContext.js"
+import {GlobalCartContext} from "./CartContext.js"
 import Counter from "./Counter.js";
 import { Link } from "react-router-dom";
 
 
 const ItemDetail = ({ itm }) => {
 
-    const { id, title, price, category, description, image, rating } = itm
+    const { title, price, category, description, image, rating } = itm
     const stock = 5
     const rate = 4.5
     const votantes = 200
    
-    const valueContextoCarrito = useContext(contextoCarro)
+    const localCartContextValue = useContext(GlobalCartContext)
     
-    const {carrito , agregarAlCarro} = valueContextoCarrito
+    const {carrito , agregarAlCarro} = localCartContextValue
         console.log(carrito)
 
         
@@ -44,7 +44,7 @@ const ItemDetail = ({ itm }) => {
                     <h4>Por tan solo: $ {price}</h4>
                     <p >Stock Disponible : {stock}</p>
 
-                    <Counter stock={stock} agregarAlCarro = {agregarAlCarro} idProdAAgregar= {id}/>
+                    <Counter stock={stock} agregarAlCarro = {agregarAlCarro} itmToCart= {itm}/>
                     <h5>{description}</h5>
 
                     <Link to="/cart" > <button>Ir al carrito</button> </Link>
