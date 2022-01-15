@@ -1,6 +1,8 @@
+import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
+import { db } from "../firebase";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailCointainer = () => {
@@ -10,11 +12,30 @@ const ItemDetailCointainer = () => {
 
     const getJustOneItem = () => {
 
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res => res.json())
-            .then(json => setItemDetail(json))
-            .catch(err => console.log("algo malo pasó:", err))
-            console.log('pidiendo item ', id)
+
+        const getItem = async () =>{
+            const prodCollection =  collection(db , "products")
+            const constrain = where("id","==" , parseInt(id))
+            const queryForId = query(prodCollection, constrain)
+            const prodDocument = await getDocs(queryForId)
+
+            const prodDocRef = prodDocument.docs
+
+            const prodForm = prodDocRef.map( p => {
+
+                return {...p.data()}
+
+            })
+            const itm = prodForm[0]
+
+            console.log(itm, 'esta es del detail')
+            setItemDetail(itm)
+        }
+        getItem()
+        // TOCAR ACAA
+
+
+
     }
 
     useEffect(() => {
@@ -31,3 +52,7 @@ const ItemDetailCointainer = () => {
 }
 
 export default ItemDetailCointainer;
+
+
+
+

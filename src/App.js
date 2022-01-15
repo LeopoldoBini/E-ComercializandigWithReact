@@ -6,7 +6,10 @@ import CartContext from "./components/CartContext";
 
 
 
+
 const App = () => {
+
+
 
     return (
         <BrowserRouter>

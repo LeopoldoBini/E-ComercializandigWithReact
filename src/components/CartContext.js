@@ -7,6 +7,7 @@ const { Provider } = GlobalCartContext;
 
 const CartContext = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
+    
 
     const estaEnCarro = (itemId) => {
         const idProductosEnCarro = carrito.reduce((a, b) => [...a, b.id], []);
@@ -32,12 +33,7 @@ const CartContext = ({ children }) => {
         }
     };
 
-/*   const borrarDelCarro = (itemId, itemCantidad) => {
-        const copiaCarrito = [...carrito];
-        copiaCarrito.find((producto) => (producto.id = itemId)).cantidad -=
-            itemCantidad;
-        setCarrito(copiaCarrito);
-    }; */
+
     const borrarDelCarro = (itemId) => {
         const copiaCarritoFiltrada = [...carrito].filter((producto) => (producto.id != itemId));
         setCarrito(copiaCarritoFiltrada)
@@ -55,7 +51,9 @@ const CartContext = ({ children }) => {
         limpiarCarro,
     };
 
-    return <Provider value={cartContextValue}>{children}</Provider>;
+    return <Provider value={cartContextValue}>
+        {children}
+        </Provider>;
 };
 
 export default CartContext;

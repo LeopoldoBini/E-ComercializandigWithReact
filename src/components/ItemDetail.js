@@ -43,11 +43,15 @@ const ItemDetail = ({ itm }) => {
                     <div class="divider col s12"></div>
                     <h4>Por tan solo: $ {price}</h4>
                     <p >Stock Disponible : {stock}</p>
-
+                    <div className="containerBotones">
                     <Counter stock={stock} agregarAlCarro = {agregarAlCarro} itmToCart= {itm}/>
-                    <h5>{description}</h5>
 
+                    </div>
+                    <h5>{description}</h5>
+                    <div className="containerBotones">
                     <Link to="/cart" > <button>Ir al carrito</button> </Link>
+
+                    </div>
 
 
                 </div>
