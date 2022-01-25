@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore'
+import { getFirestore, collection } from 'firebase/firestore'
+
 
 import 'firebase/firestore'
 
@@ -15,4 +16,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app)
+export const prodCollection =  collection(db , "products")
+export const ordenesDeCompraCollection = collection(db, "ordenesDeCompra")
+export const newsLetterCollection = collection(db, "suscripcionNewsletter")
+
+
+
+
 

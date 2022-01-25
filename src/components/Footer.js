@@ -1,26 +1,48 @@
-const Footer = () => {
-    return <>
-        <footer class="page-footer" id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text" style={{padding: 0 }}>Ya se, somos los mejores..</h5>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <p class="grey-text text-lighten-4 " style={{padding: 0 }}>Vuelve pronto a Comprar!!.</p>
-                        
+import NewsletterForm from "./NewsletterForm";
+import logo from "../assets/online-shopping.png";
 
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2094 Copyright Always
-                    <a class="grey-text text-lighten-4 right" href="#!">Visit another place to spend</a>
-                </div>
-            </div>
-        </footer>
-    </>
-}
+const Footer = () => {
+  return (
+    <footer>
+      <div className="pie">
+        <div className="pie__caja pie__cajaLogo">
+          <div className="pie__logo">
+            <img src={logo} alt="" />
+          </div>
+          <div className="pie__terms">
+            <p>Envios sin cargo a todo el pais a partir de los 500 USD </p>
+          </div>
+        </div>
+
+        <div className="pie__caja">
+          <h2>Newsletter</h2>
+          <NewsletterForm></NewsletterForm>
+        </div>
+
+        <div className="pie__caja">
+          <h2>Redes Sociales</h2>
+          <ul>
+            <li>
+              <i className="fab fa-facebook-square"></i> Facebook
+            </li>
+            <li>
+              <i className="fab fa-instagram"></i> Instagram
+            </li>
+            <li>
+              <i className="fab fa-pinterest-square"></i> Pinterest
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="pie__copyright">
+        <br />
+        <p>
+          Todos los derechos reservados <b>™ Comprando con Leopoldo</b> 2022.
+        </p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

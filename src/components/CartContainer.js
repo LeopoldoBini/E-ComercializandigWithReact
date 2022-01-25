@@ -4,11 +4,11 @@ import { useContext } from "react";
 import CartElement from "./CartElement.js";
 
 
-const Cart = () => {
+const CartContainer = () => {
 
 
     const { carrito, borrarDelCarro } = useContext(GlobalCartContext);
-    const carroVacio = carrito.length == 0;
+    const carroVacio = carrito.length === 0;
 
     const totalAmount = carroVacio
         ? 0
@@ -26,7 +26,7 @@ const Cart = () => {
                     {carrito.length} Productos | {totalQuantity} Unidades en Total{" "}
                 </h3>
                 <div className="container small">
-                    <ul class="collection">
+                    <ul className="collection">
                         
                         {carrito.map((e, i) => {
                             return (
@@ -34,10 +34,10 @@ const Cart = () => {
                             );
                         })}
                         <div id="totalAPagar">
-                            <li class="collection-item avatar large">
-                                <i class="material-icons circle red">monetization_on</i>
-                                <span class="title">TOTAL A PAGAR </span>
-                                <p>$ {totalAmount}</p>
+                            <li className="collection-item avatar large">
+                                <i className="material-icons circle red">monetization_on</i>
+                                <span className="title">TOTAL A PAGAR </span>
+                                <p>$ {Math.round((totalAmount + Number.EPSILON) * 100) / 100 }</p>
                             </li>
                             <Link to="/finalizandoCompra">
                                 <button className="btn">PAGAR</button>
@@ -64,4 +64,4 @@ const Cart = () => {
     }
 };
 
-export default Cart;
+export default CartContainer;

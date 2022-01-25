@@ -1,0 +1,42 @@
+     const subirProd = async () => {
+
+        const arryConStock = arryDefakeStore.map( item => {
+            let stock = parseInt(Math.random()*10)+1
+            return {...item , stock}
+        })
+        console.log(arryConStock)
+        const coleccionDeProd = collection( db, "products")
+
+        const idSubidos= []
+        try {
+            arryConStock.forEach((itm) => {
+                const refSubidaCorrecta = addDoc(coleccionDeProd, itm);
+                const idSubida = refSubidaCorrecta.id;
+                idSubidos.push(idSubida);
+            })
+    
+            toast.success(`Subido con Exito ${idSubidos.length} productos`, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+            console.log(idSubidos, 'Lista de SUbidas')
+
+        }catch (error) {
+            toast.error(`Srry , ${error} `, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+            console.log(error)
+        }
+        
+    }

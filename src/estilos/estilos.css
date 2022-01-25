@@ -1,38 +1,126 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html , body , #root {
-    height: 100vh;
+html,
+body,
+#root {
+  height: 100vh;
 }
 #root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #main {
-    flex-grow: 1;
-    margin: 2rem 0 ;
+  flex-grow: 1;
+  margin: 2rem 0;
 }
-.containerBotones{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem auto;
+.containerBotones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
 }
-#totalAPagar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-
+#totalAPagar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
-#carritoaside{
-    margin-top: 5%;
-
+#carritoaside {
+  margin-top: 5%;
 }
 
-.answer{
-    margin: auto;
+.answer {
+  margin: auto;
+}
+.cardImg {
+  height: 300px;
+}
+
+footer {
+  width: 100%;
+  padding: 50px 0px;
+  background-image: url(../assets/svg/background-footer.svg);
+  background-size: cover;
+  -webkit-mask-image: url(../assets/svg/background-footer.svg);
+  mask-image: url(../assets/svg/background-footer.svg);
+  -webkit-mask-size: cover;
+}
+
+.pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 50px;
+}
+.pie__caja {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+.pie__caja h2 {
+  margin-bottom: 30px;
+  color: #343434;
+  font-weight: 700;
+}
+.pie__caja i,
+a,
+li {
+  text-decoration: none;
+  margin-top: 10px;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.pie__caja a:hover {
+  opacity: 0.8;
+}
+.pie__caja a .fab {
+  font-size: 20px;
+}
+.pie__terms {
+  text-align: center;
+}
+.pie__logo {
+  text-align: center;
+}
+.pie__caja .pie__logo img {
+  width: 180px;
+  margin: auto;
+}
+.pie__caja .pie__terms {
+  max-width: 350px;
+  margin-top: 20px;
+}
+.pie__caja .pie__terms p {
+  font-weight: 500;
+  color: #7a7a7a;
+  font-size: 12px;
+}
+.pie__copyright {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 40px;
+}
+.pie__copyright p {
+  margin-top: 20px;
+  color: #7a7a7a;
+}
+.pie__copyright hr {
+  border: none;
+  height: 1px;
+  background-color: #7a7a7a;
+}
+#btnNewsletter{
+    margin: 0;
+}
+.formValidator{
+    color: #e57373;
+    font-size: 12px;
+    position: relative;
+    top: -7px;
 }

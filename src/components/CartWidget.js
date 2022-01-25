@@ -6,13 +6,13 @@ const CartWidget = () => {
     
     const {carrito } = useContext(GlobalCartContext)
     
-    if (carrito.length != 0){
+    if (carrito.length !== 0){
 
         return (
             <>
-                <div class="right" style={{ width: "100px" }}>
+                <div className="right" style={{ width: "100px" }}>
                     <Link to="/cart">
-                    <span class="new badge" data-badge-caption="">{carrito.length}</span><span class="center">🛒 Mi Carrito</span>
+                    <span className="new badge" data-badge-caption="">{carrito.length}</span><span className="center">🛒 Mi Carrito</span>
                     </Link>
                 </div>
             </>

@@ -16,6 +16,9 @@ const CartContext = ({ children }) => {
     };
 
     const agregarAlCarro = (itemId, itemCantidad, fullItem) => {
+
+
+
         if (estaEnCarro(itemId)) {
 
             const copiaCarrito = [...carrito];
@@ -35,7 +38,7 @@ const CartContext = ({ children }) => {
 
 
     const borrarDelCarro = (itemId) => {
-        const copiaCarritoFiltrada = [...carrito].filter((producto) => (producto.id != itemId));
+        const copiaCarritoFiltrada = [...carrito].filter((producto) => (producto.id !== itemId));
         setCarrito(copiaCarritoFiltrada)
     }
 

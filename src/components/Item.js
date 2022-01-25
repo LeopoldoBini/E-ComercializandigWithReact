@@ -8,26 +8,26 @@ const Item = ( {itm, i} ) => {
     return (
 
 
-        <div class="col s3">
-            <div class="card large hoverable">
-                <div class="card-image">
-                    <img src={image} style={{ height: "300px", }} alt={title}></img>
-                    <span class="card-title" style={{ text_shadow: "1px 1px 2px black" }}>{title}</span>
+        <div className="col s12  m6 l4 xl3">
+            <div className="card large hoverable">
+                <div className="card-image">
+                    <img src={image} className="cardImg" alt={title}></img>
+                    <span className="card-title">{title}</span>
                 </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{category}<i class="material-icons right">more_vert</i></span>
+                <div className="card-content">
+                    <span className="card-title activator grey-text text-darken-4">{category}<i className="material-icons right">more_vert</i></span>
                     <h5>${price}</h5>
                 </div>
-                <div class="card-reveal center-align">
-                    <span class="card-title grey-text text-darken-4">{title}<i class="material-icons right">close</i></span>
+                <div className="card-reveal center-align">
+                    <span className="card-title grey-text text-darken-4">{title}<i className="material-icons right">close</i></span>
                     <p>{description}</p>
                     <Link to= {pathToDetail}>
-                        <button class="btn ">Comprar</button>
+                        <button className="btn ">Comprar</button>
                     </Link>
                 </div>
-                <div class="card-action center-align">
+                <div className="card-action center-align">
                     <Link to= {pathToDetail}>
-                        <button class="btn ">Ver detalle</button>
+                        <button className="btn ">Ver detalle</button>
                     </Link>
 
                 </div>

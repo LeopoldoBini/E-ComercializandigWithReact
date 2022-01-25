@@ -6,11 +6,11 @@ const NavBar = () => {
     return(
         <nav>
 
-            <div class="nav-wrapper">
+            <div className="nav-wrapper">
             
-            <h1 style={{margin : "auto"}} class="brand-logo center valign-wrapper"> <NavLink to ="/">E-comercializandig</NavLink></h1>    
+            <h1 style={{margin : "auto"}} className="brand-logo center valign-wrapper"> <NavLink to ="/">E-comercializandig</NavLink></h1>    
                 
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <ul id="nav-mobile" className="left hide-on-med-and-down">
                     <li> <NavLink to = "categoria/women's clothing"> women's clothing </NavLink> </li>
                     <li> <NavLink to = "categoria/men's clothing"> men's clothing </NavLink> </li>
                     <li> <NavLink to = "categoria/electronics"> electronics </NavLink> </li>

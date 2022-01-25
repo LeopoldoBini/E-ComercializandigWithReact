@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Counter = ({ stock, agregarAlCarro, itmToCart }) => {
 
@@ -27,16 +27,11 @@ const Counter = ({ stock, agregarAlCarro, itmToCart }) => {
         return <>
             <p>Unidades a comprar: {quantity}</p>
             <div id="botonera">
-                <button class="btn-floating btn-small waves-effect waves-light red" onClick={restar}>➖</button>
-                <button class="waves-effect waves-light btn-small pink lighten-2 pulse" onClick={onAdd}>Agregar al Carrito</button>
-                <button class="btn-floating btn-small waves-effect waves-light red" onClick={sumar}>➕</button>
+                <button className="btn-floating btn-small waves-effect waves-light red" onClick={restar}>➖</button>
+                <button className="waves-effect waves-light btn-small pink lighten-2" onClick={onAdd}>Agregar al Carrito</button>
+                <button className="btn-floating btn-small waves-effect waves-light red" onClick={sumar}>➕</button>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                theme="colored"
 
-            />
         </>
     } else {
         return <h1>No Tenemos Stock, perdon</h1>
