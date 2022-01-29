@@ -1,7 +1,5 @@
 # TRABAJO FINAL DE React JS - CODERHOUSE 
 
-[![Alt text](https://img.youtube.com/vi/https://youtu.be/gurERy9DYhM/0.jpg)](https://www.youtube.com/watch?v=https://youtu.be/gurERy9DYhM)
-
 https://youtu.be/gurERy9DYhM
 
 ¡Una E-commerce pa que empieces a ver todo lo que se puede hacer con REACT!
