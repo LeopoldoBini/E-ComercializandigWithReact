@@ -10,8 +10,9 @@ El proyecto consiste en la realización de un e-commerce para ir aprendiendo hac
 
 * Firestore
 * React
-* React Dom
-* React Router
+* React Router Dom
+* React - Toastify
+* Validator
 
 # ¿Cómo correr este proyecto?
 
