@@ -5,19 +5,17 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({ itm }) => {
   const { title, price, category, description, image, rating, stock } = itm;
-  
-
 
   const localCartContextValue = useContext(GlobalCartContext);
 
   const { carrito, agregarAlCarro } = localCartContextValue;
-  console.log(carrito);
+
 
   return (
     <div className="container-large">
       <div className="row">
         <div className="col s12">
-          <h1>{category} </h1>
+          <h2 id="idc-category">{category} </h2>
         </div>
       </div>
 
@@ -27,23 +25,27 @@ const ItemDetail = ({ itm }) => {
         </div>
 
         <div className="col s6">
-          <h3>{title}</h3>
+          <h3 id="idc-title">{title}</h3>
           <div className="divider"></div>
-          <div className="section flex">
+          <div id="puntos">
+            <p id="rate">{rating.rate} / 5</p>
             <meter
-              className="col s4 right-align"
-              max="5"
+              id="meter"
               min="0"
+              low="1"
+              high="4"
+              max="5"
               value={rating.rate}
+              optimum="5"
             ></meter>
-            <h5>
-              {rating.rate} <p>`({rating.count}) votos`</p>
-            </h5>
+            <p id="votes">({rating.count}) votos</p>
           </div>
 
           <div className="divider col s12"></div>
-          <h4>Por tan solo: $ {price}</h4>
-          <p>Stock Disponible : {stock}</p>
+
+          <h5 id="idc-prePrice">Por tan solo: <span id="idc-precio">$ {price} </span></h5>
+
+          
           <div className="containerBotones">
             <Counter
               stock={stock}
@@ -51,12 +53,16 @@ const ItemDetail = ({ itm }) => {
               itmToCart={itm}
             />
           </div>
-          <h5>{description}</h5>
+          <div className="divider"></div>
+          <p id="idc-desc">{description}</p>
           <div className="containerBotones">
-            <Link to="/cart">
-              
-              <button>Ir al carrito</button>
-            </Link>
+            {carrito.length === 0 ? (
+              ""
+            ) : (
+              <Link to="/cart">
+                <button id="irAlCarro"> Ir al carrito 🤪</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

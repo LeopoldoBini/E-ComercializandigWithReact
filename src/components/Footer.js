@@ -36,7 +36,7 @@ const Footer = () => {
       </div>
 
       <div className="pie__copyright">
-        <br />
+        <hr />
         <p>
           Todos los derechos reservados <b>™ Comprando con Leopoldo</b> 2022.
         </p>

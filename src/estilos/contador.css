@@ -1,0 +1,39 @@
+#contador{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    border: 2px solid rgb(63, 48, 68);
+    border-radius: 5px;
+
+}
+#cuenta{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 60px;
+}
+#cantidad{
+    width: 100%;
+    margin: auto;
+}
+#modificadores{
+    width: 20px;
+    border-radius:10px;
+    outline: none;
+}
+.modificarcuenta{
+    height: 50%;
+    background-color: rgb(189, 185, 185);
+}
+#agregar{
+    font-family: monospace;
+    background-color: rgb(65, 55, 68);
+    color: white;
+    width: 200px;
+}
+#disponibilidad{
+    color: rgb(63, 48, 68);
+    font-size: .9rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

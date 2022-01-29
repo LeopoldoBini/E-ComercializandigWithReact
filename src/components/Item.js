@@ -9,17 +9,21 @@ const Item = ( {itm, i} ) => {
 
 
         <div className="col s12  m6 l4 xl3">
-            <div className="card large hoverable">
+            <div className="card medium hoverable">
                 <div className="card-image">
                     <img src={image} className="cardImg" alt={title}></img>
-                    <span className="card-title">{title}</span>
+                    <span id="itm-title" >{category}</span>
                 </div>
-                <div className="card-content">
-                    <span className="card-title activator grey-text text-darken-4">{category}<i className="material-icons right">more_vert</i></span>
-                    <h5>${price}</h5>
+                <div id="itm-content">
+                    <div id="activador">
+
+                    <span  className=" activator">{title}</span><i className="activator material-icons right">more_vert</i>
+
+                    </div>
+                    <h3 id="itm-price">$ {price} </h3>
                 </div>
                 <div className="card-reveal center-align">
-                    <span className="card-title grey-text text-darken-4">{title}<i className="material-icons right">close</i></span>
+                    <span className="card-title">{title}<i className="material-icons right">close</i></span>
                     <p>{description}</p>
                     <Link to= {pathToDetail}>
                         <button className="btn ">Comprar</button>
@@ -27,7 +31,7 @@ const Item = ( {itm, i} ) => {
                 </div>
                 <div className="card-action center-align">
                     <Link to= {pathToDetail}>
-                        <button className="btn ">Ver detalle</button>
+                        <button id="itm-btn"className="btn ">Ver detalle</button>
                     </Link>
 
                 </div>

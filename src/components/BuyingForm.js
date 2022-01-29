@@ -1,54 +1,76 @@
 import { ordenesDeCompraCollection } from "../firebase";
 import { addDoc } from "firebase/firestore";
 import { GlobalCartContext } from "./CartContext.js";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import CartElement from "./CartElement.js";
 import { useContext, useState } from "react";
+import validator from "validator";
 
 const BuyingForm = () => {
   const initialValues = { nombre: "", apellido: "", email: "", tel: "" };
   const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [id, setId] = useState("");
-  const { carrito, limpiarCarro, borrarDelCarro } =
+  const { carrito, limpiarCarro, borrarDelCarro, totalAmount, totalQuantity } =
     useContext(GlobalCartContext);
-
-  const carroVacio = carrito.length === 0;
-
-  const totalAmount = carroVacio
-    ? 0
-    : carrito.map((e) => e.cantidad * e.detalle.price).reduce((a, b) => a + b);
-
-  const totalQuantity = carroVacio
-    ? 0
-    : carrito.map((e) => e.cantidad).reduce((a, b) => a + b);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
+  const validate = (inputs) => {
+    const errors = {};
+
+    const correctName = validator.isAlpha(inputs.nombre);
+    const correctLastName = validator.isAlpha(inputs.apellido);
+    const correctEmail = validator.isEmail(inputs.email);
+    const correctTel = validator.isMobilePhone(inputs.tel);
+
+    if (!correctName) {
+      errors.nombre = "Necesitamos un Nombre!";
+    }
+    if (!correctLastName) {
+      errors.apellido = "Necesitamos un Apellido!";
+    }
+    if (!correctTel) {
+      errors.tel = "Necesitamos un Telefono para contactarte!";
+    }
+    if (!correctEmail) {
+      errors.email = "Necesitamos un E-mail!";
+    }
+
+    setFormErrors(errors);
+    return correctName && correctLastName && correctTel && correctEmail
+      ? true
+      : false;
+  };
+
   const submit = async (e) => {
     e.preventDefault();
-    const momentoPedido = new Date(Date.now()).toLocaleString();
-    const orden = {
-      date: momentoPedido,
-      comprador: formValues,
-      detalle: carrito,
-      total: totalAmount,
-    };
-    const refOrderMandada = await toast.promise(
-      addDoc(ordenesDeCompraCollection, orden),
-      {
-        pending: "Cargando Pedido",
-        success: "Pedido recibido con Exito 👌",
-        error: "Algo salió mal, vuelve a intentar 🤯",
-      }
-    );
-    const idOrder = refOrderMandada.id;
-    setId(idOrder);
-    limpiarCarro();
-    setIsSubmit(true);
+
+    if (validate(formValues)) {
+      const momentoPedido = new Date(Date.now()).toLocaleString();
+      const orden = {
+        date: momentoPedido,
+        comprador: formValues,
+        detalle: carrito,
+        total: totalAmount,
+      };
+      const refOrderMandada = await toast.promise(
+        addDoc(ordenesDeCompraCollection, orden),
+        {
+          pending: "Cargando Pedido",
+          success: "Pedido recibido con Exito 👌",
+          error: "Algo salió mal, vuelve a intentar 🤯",
+        }
+      );
+      const idOrder = refOrderMandada.id;
+      setId(idOrder);
+      limpiarCarro();
+      setIsSubmit(true);
+    }
   };
 
   if (!isSubmit) {
@@ -65,6 +87,7 @@ const BuyingForm = () => {
                   name="nombre"
                   onChange={handleChange}
                 />
+                <p className="formValidator">{formErrors.nombre}</p>
                 <label for="first_name">Nombre</label>
               </div>
 
@@ -75,6 +98,7 @@ const BuyingForm = () => {
                   name="apellido"
                   onChange={handleChange}
                 />
+                <p className="formValidator">{formErrors.apellido}</p>
                 <label for="last_name">Apellido</label>
               </div>
             </div>
@@ -87,6 +111,7 @@ const BuyingForm = () => {
                   name="email"
                   onChange={handleChange}
                 />
+                <p className="formValidator">{formErrors.email}</p>
                 <label for="email">Email</label>
               </div>
             </div>
@@ -98,6 +123,7 @@ const BuyingForm = () => {
                   name="tel"
                   onChange={handleChange}
                 />
+                <p className="formValidator">{formErrors.tel}</p>
                 <label for="Telefono">Telefono de Contacto</label>
               </div>
             </div>
@@ -131,7 +157,6 @@ const BuyingForm = () => {
             </ul>
           </div>
         </section>
-        
       </div>
     );
   } else {
@@ -139,7 +164,6 @@ const BuyingForm = () => {
       <>
         <h1 className="center-align answer">Muchas Gracias por su compra</h1>
         <p className="center-align"> Id de compra : {id}</p>
-       
       </>
     );
   }

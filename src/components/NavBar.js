@@ -1,26 +1,42 @@
 import CartWidget from "./CartWidget";
+import logo from "../assets/react.png";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-
-    return(
-        <nav>
-
-            <div className="nav-wrapper">
-            
-            <h1 style={{margin : "auto"}} className="brand-logo center valign-wrapper"> <NavLink to ="/">E-comercializandig</NavLink></h1>    
-                
-            <ul id="nav-mobile" className="left hide-on-med-and-down">
-                    <li> <NavLink to = "categoria/women's clothing"> women's clothing </NavLink> </li>
-                    <li> <NavLink to = "categoria/men's clothing"> men's clothing </NavLink> </li>
-                    <li> <NavLink to = "categoria/electronics"> electronics </NavLink> </li>
-                    <li> <NavLink to = "categoria/jewelery"> jewelery </NavLink> </li>
-                </ul>
-            <CartWidget></CartWidget>
-            </div>
-
-
-        </nav>
-    )
-}
+  return (
+    <header id="header">
+      <div class="contenedor__header">
+          
+            <NavLink to ="/">
+        <div class="contenedor__header__logo">
+          <img
+            src={logo}
+            alt=""
+            id="logoHeader"
+            />
+          <h2 id="marca">E-Comercializing</h2>
+        </div>
+            </NavLink>
+        <div class="contenedor__header__contenedorNav">
+          <div class="contenedor__header__nav" id="redesHeader">
+            <ul class="contenedor__header__ul">
+              <li className="contenedor__header__li">
+                <i className="fab fa-facebook-square"></i> 
+              </li>
+              <li className="contenedor__header__li">
+                <i className="fab fa-instagram"></i> 
+              </li>
+              <li className="contenedor__header__li">
+                <i className="fab fa-pinterest-square"></i> 
+              </li>
+              
+              <CartWidget></CartWidget>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
 export default NavBar;

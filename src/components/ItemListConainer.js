@@ -11,6 +11,7 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { tipo } = useParams();
   const [loading, setLoading] = useState(true);
+  const [objCatList, setCatList] = useState([]);
 
   const getItems = async () => {
     setLoading(true);
@@ -24,7 +25,26 @@ const ItemListContainer = () => {
           return { ...doc.data() };
         });
 
+        const listaCategorias = productosFormateados.map(({category}) => category)
+        
+        const objCategoriasUnicas = [...new Set(listaCategorias)].reduce((a, b )=> {
+          const reducer = {...a}
+          reducer[b] = 0
+          return reducer
+        },{});
+
+
+        const objCategoriasQuantity = listaCategorias.reduce((a, b)=>{
+          const reducer = {...a}
+          reducer[b] += 1
+          return reducer
+        },objCategoriasUnicas)
+        
+
+
+
         setItems(productosFormateados);
+        setCatList(objCategoriasQuantity) 
         setLoading(false);
       };
       traerProd();
@@ -51,7 +71,7 @@ const ItemListContainer = () => {
     getItems();
   }, [tipo]);
 
-  return loading ? <CositoCargando /> : <ItemList listaDeItems={items} />;
+  return loading ? <CositoCargando /> : <ItemList listaDeItems={items} objCatList={objCatList} />;
 };
 
 export default ItemListContainer;

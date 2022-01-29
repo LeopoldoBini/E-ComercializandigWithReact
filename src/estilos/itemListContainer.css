@@ -1,0 +1,34 @@
+
+#asideNav{
+    
+    position: relative;
+    border-radius: 5px;
+    background-color: rgba(228, 227, 227, 0.306);
+    width: 170px;
+    height: 100%;
+    left: -30px;
+    padding: 10px;
+
+}
+#asideNav-Cat{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: auto;
+    margin-bottom: 8px;
+    
+}
+.asideNav-Element{
+    font-size: .8rem;
+    font-weight: 400;
+    font-family: monospace;
+    padding-left: 15px;
+}
+.asideNav-Element:hover{
+    color: black;
+    font-weight: 900;
+}
+
+.asideNav-ElementQuantity{
+    font-weight: 900;
+    color: rgb(95, 55, 105);
+}

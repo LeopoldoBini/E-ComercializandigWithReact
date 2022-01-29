@@ -7,22 +7,15 @@ import CartElement from "./CartElement.js";
 const CartContainer = () => {
 
 
-    const { carrito, borrarDelCarro } = useContext(GlobalCartContext);
+    const { carrito, borrarDelCarro , totalAmount, totalQuantity } = useContext(GlobalCartContext);
     const carroVacio = carrito.length === 0;
-
-    const totalAmount = carroVacio
-        ? 0
-        : carrito.map((e) => e.cantidad * e.detalle.price).reduce((a, b) => a + b);
-    const totalQuantity = carroVacio
-        ? 0
-        : carrito.map((e) => e.cantidad).reduce((a, b) => a + b);
 
 
     if (!carroVacio) {
         return (
             <div className="container">
-                <h2>Carrito de Compras</h2>
-                <h3>
+                <h2 id="carro">Carrito de Compras</h2>
+                <h3 id="carroCounttitulo">
                     {carrito.length} Productos | {totalQuantity} Unidades en Total{" "}
                 </h3>
                 <div className="container small">
@@ -47,7 +40,7 @@ const CartContainer = () => {
                     </ul>
 
                     <Link to="/">
-                        <button>Seguir comprando</button>
+                        <button id="seguirComprando">👈 Seguir comprando</button>
                     </Link>
                 </div>
             </div>

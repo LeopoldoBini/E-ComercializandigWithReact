@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import {GlobalCartContext} from "./CartContext.js";
 import { useContext } from "react";
+import cart from "../assets/shopping-cart (1).png"
 
 const CartWidget = () => {
     
@@ -10,11 +11,12 @@ const CartWidget = () => {
 
         return (
             <>
-                <div className="right" style={{ width: "100px" }}>
+                <li id="cartWidget">
                     <Link to="/cart">
-                    <span className="new badge" data-badge-caption="">{carrito.length}</span><span className="center">🛒 Mi Carrito</span>
+                    <img src={cart} alt="carrito" id="header-cart"/>
+                    <span id="badge">{carrito.length}</span>
                     </Link>
-                </div>
+                </li>
             </>
         );
 

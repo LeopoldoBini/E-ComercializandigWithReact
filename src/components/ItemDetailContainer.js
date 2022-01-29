@@ -24,7 +24,6 @@ const ItemDetailCointainer = () => {
       });
       const itm = prodForm[0];
 
-      console.log(itm, "esta es del detail");
       setItemDetail(itm);
       setLoading(false);
     };

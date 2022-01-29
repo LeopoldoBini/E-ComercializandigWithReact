@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { newsLetterCollection } from "../firebase";
 import { addDoc } from "firebase/firestore";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import handshake from "../assets/handshake (1).png";
-import validator from "validator";
 import isEmail from "validator/lib/isEmail";
 import isAlpha from "validator/lib/isAlpha";
 

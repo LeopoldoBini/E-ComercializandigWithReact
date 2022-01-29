@@ -3,7 +3,7 @@ const CartElement = ({itm, borrarDelCarro}) => {
     const { id, cantidad, detalle } = itm
     const totalElement = Math.round(((detalle.price *cantidad) + Number.EPSILON) * 100) / 100 
     const borrar = ()=>{
-        borrarDelCarro(id)
+        borrarDelCarro(id , cantidad, detalle.price)
     }
 
     return (

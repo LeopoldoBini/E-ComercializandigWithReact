@@ -1,0 +1,56 @@
+#idc-category{
+    font-size: 2.8rem;
+    font-family: "Permanent Marker";
+    font-weight: 500;
+    color: rgb(100, 71, 160);
+    margin: 1rem auto;
+
+  }
+#idc-title{
+    font-size: 1.5rem;
+}
+#puntos{
+    margin: auto;
+    font-size: .8rem;
+    height: 50px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#rate{
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1rem;
+}
+#votes{
+    font-family: monospace;
+}
+#meter{ 
+    width: 200px;
+    height: 30px;
+}
+#idc-desc{
+    margin-top: 20px;
+    line-height: 28px;
+}
+#idc-prePrice{
+    text-align: center;
+    font-weight: 500;
+}
+#idc-precio{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;;
+    font-weight: 900;
+    font-size: 110%;
+}
+#irAlCarro{
+    background-color: rgb(132, 115, 148);
+    font-family: monospace;
+    font-size: 1.2rem;
+    border: 1px solid rgb(185, 169, 199);
+    padding: 5px 30px;
+    color: white;
+    border-radius: 2px;
+    filter: drop-shadow(-5px 5px 3px rgba(0, 0, 0, .2));
+}

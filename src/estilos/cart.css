@@ -1,0 +1,22 @@
+#seguirComprando{
+    position: relative;
+    border-style: none;
+    background-color: rgba(187, 159, 208, 0);
+    font-family: "Permanent Marker";
+    font-size: 2rem;
+    color: rgb(96, 84, 119);
+    left: -60px;
+    top: 20px;
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.1))
+}
+#carro{
+    font-weight: 600;
+}
+#carroCounttitulo{
+    position: relative;
+    left: 40px;
+    top: -15px;
+    font-size: 1.5rem;
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0))
+}
